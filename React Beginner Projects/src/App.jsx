@@ -1,7 +1,7 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Accordion from './Components/accordion/Index'
+import Accordion from './Components/accordion/Accordion'
 
 
 function App() {
