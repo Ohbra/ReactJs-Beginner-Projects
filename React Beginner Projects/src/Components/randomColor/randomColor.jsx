@@ -1,5 +1,10 @@
 export default function RandomColor(){
     return(
-        <p>Random Color</p>
+        <div>
+            <button>Change RGB</button>
+            <button>Change HEX</button>
+            <button>Generate Random Color</button>
+
+        </div>
     )
 }
