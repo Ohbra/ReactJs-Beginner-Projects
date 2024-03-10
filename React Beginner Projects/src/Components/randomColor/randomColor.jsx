@@ -2,16 +2,25 @@ import { useState } from "react";
 
 export default function RandomColor() {
   const [colorType, setColorType] = useState(null);
-  const color = "pink";
+  const [color, setColor] = useState("white");
 
-  console.log("colorType -> " + colorType);
+ function utility(limit){
+    return Math.round(Math.random() * limit);
+ }
 
   function handleRGB() {
-    console.log("handleRGB -> " + colorType);
+    setColor("red")
   }
 
   function handleHEX() {
-    console.log("handleHEX -> " + colorType);
+    let hexColor = "#";
+    let length = 6;
+    for (let index = 0; index < length; index++) {
+        hexColor += `${utility(index)}`;
+   
+    }
+    console.log(hexColor)
+    setColor(hexColor)
   }
 
   return (
