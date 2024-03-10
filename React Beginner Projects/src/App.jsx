@@ -18,7 +18,7 @@ function App() {
         </a>
       </div>
       {/* Accorrdion Component */}
-      <Accordion/>
+      {/* <Accordion/> */}
 
       {/* Random Color Component */}
       <RandomColor/>
