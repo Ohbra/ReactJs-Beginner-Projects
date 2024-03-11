@@ -1,20 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function RandomColor() {
   const [colorType, setColorType] = useState(null);
   const [color, setColor] = useState("white");
 
   useEffect(() => {
-    first
-  
-    return () => {
-      second
-    }
-  }, [colorType, color])
+    if (colorType === "RGB") handleRGB();
+    else handleHEX();
+  }, [colorType])
   
 
  function utility(limit){
-    return Math.round(Math.random() * limit);
+    return Math.floor(Math.random() * limit);
  }
 
   function handleRGB() {
@@ -30,9 +27,9 @@ export default function RandomColor() {
 
   function handleHEX() {
     let hexColor = "#";
-    let hex = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
+    let hex = [0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"];
     for (let index = 0; index < 6; index++) {
-        hexColor += `${hex[utility(hex.length)]}`;
+        hexColor += hex[utility(hex.length)];
    
     }
     console.log(hexColor)
@@ -51,9 +48,16 @@ export default function RandomColor() {
           Generate Random Color
         </button>
 
-        <div>
-          <h1>{colorType}</h1>
-          <h1>{color}</h1>
+        <div style={{
+          display:"flex",
+          justifyContent:"center",
+          alignItems:"center",
+          marginTop:"50px",
+          fontSize:"50px",
+          flexDirection:"column"
+        }}>
+          <h2>{colorType}</h2>
+          <h2>{color}</h2>
         </div>
       </div>
 
